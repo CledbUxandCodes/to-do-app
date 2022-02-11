@@ -1,6 +1,6 @@
 const Todo = require('../models/todo.model');
 
-async const getAllTodos = (req, res, next) => {
+const getAllTodos = async (req, res, next) => {
     let todos;
     try {
         todos = await Todo.getAllTodos();
@@ -13,7 +13,7 @@ async const getAllTodos = (req, res, next) => {
     });
 };
 
-async const addTodo = (req, res, next) => {
+const addTodo = async (req, res, next) => {
     const todoText = req.body.text;
 
     const todo = new Todo(todoText);
